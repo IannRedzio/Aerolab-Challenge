@@ -1,7 +1,8 @@
 import { Stack } from "@chakra-ui/react";
-import Header from "./components/Header";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import ProductList from "./components/ProductList";
+
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -13,9 +14,12 @@ function App() {
       marginY={4}
       spacing={0}
     >
-      <NavBar />
-      <Header />
-      <ProductList />
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </Router>
     </Stack>
   );
 }
