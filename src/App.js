@@ -1,5 +1,6 @@
 import { Stack } from "@chakra-ui/react";
 import Header from "./components/Header";
+import NavBar from "./components/NavBar";
 import ProductList from "./components/ProductList";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       marginY={4}
       spacing={0}
     >
+      <NavBar />
       <Header />
       <ProductList />
     </Stack>
