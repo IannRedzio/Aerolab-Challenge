@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Stack, Text, Button, Divider, SimpleGrid } from "@chakra-ui/react";
 import { api } from "../api";
+import ProductCard from "./ProductCard";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -24,7 +25,9 @@ const ProductList = () => {
       <Divider />
       <Stack>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 3, xl: 4 }} gap={3}>
-          productos
+          {products.map((product) => (
+            <ProductCard product={product} />
+          ))}
         </SimpleGrid>
       </Stack>
     </Stack>
